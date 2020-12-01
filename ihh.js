@@ -18,8 +18,11 @@ class IH {
     scriptButton = null;
     textAreaDiv = null;
 
-    constructor() {
+    convertCallback = null;
 
+    constructor(convertCallback) {
+
+        this.convertCallback = convertCallback;
         this.showScriptButton();
         this.startWatch();
         this.loadData();
@@ -73,7 +76,7 @@ Names: <span  id="ihh-count">0</span>
 
         namesArray.forEach((line) => {
             // User ID,Username,Name,Incoming Status,Outgoing Status
-            var s = line.split(",")[1];
+            var s = this.convertCallback(line);
             var cleaned = s.substring(1, s.length-1);
             if (cleaned.length > 0) {
                 this.tounfollow.push(cleaned);
@@ -197,4 +200,6 @@ Names: <span  id="ihh-count">0</span>
 }
 
 
-var a = new IH();
+var a = new IH((line)=>{
+    return line.split(",")[1];
+});
