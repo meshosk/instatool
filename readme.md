@@ -37,7 +37,7 @@ And thats all.
 
 # How to operate?
 
-After running snipped in right top viewport corner will appear little red rectangle:
+After running snipped in left top viewport corner will appear little red rectangle:
 
 ![x](imgs/button.png)
  
@@ -51,7 +51,7 @@ Then open your instagram profile and its following tab. Here you can see followe
    
 Scripts is watching every AJAX response, and if there is reponse 429 it will notify you. It means
 that you must wait a little to do the action again. Its little annoying, but you can 
-after while continue...
+after while continue and reduce large count of followers....
 
 Oh, and script uses localsotrage, so that you do not need to load followers list every time 
 you start sctipt (on page reload or tab close).
